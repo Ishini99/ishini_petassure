@@ -220,7 +220,7 @@ if (isset($_POST['but_submit']))
                             <div class="formin"><input class="input_box" type="text" name="username" required></div>
                         </div>
 
-                        <br>
+                        <br><br>
 
                         <div class="formcontent">
                             <div class="formlabel"> Password: </div>
