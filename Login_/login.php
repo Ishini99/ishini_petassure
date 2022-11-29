@@ -19,9 +19,8 @@ if (isset($_POST['but_submit'])) {
         header("Location: vetDashboard.php");
         exit();
     } else {
-        echo '<script> window.alert("Incorrect Username or password");</script>';
-        header("Location: login.php");
-        exit();
+        echo '<script> window.alert("Incorrect Username or password.Try Again");</script>';
+       
     }
 
     mysqli_close($con);
@@ -36,6 +35,7 @@ if (isset($_POST['but_submit'])) {
     <link rel="stylesheet" href="styles_login.css">
 
     <title>Login</title>
+   
     <script type="text/javascript">
             function validate() {
                 if (document.myForm.uname.value == "") {

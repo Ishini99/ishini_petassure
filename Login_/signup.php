@@ -49,6 +49,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     <link rel="stylesheet" href="styles_signUp.css" />
     <title>Sign Up</title>
 
+
+    <script type="text/javascript">
+        var nic = document.getElementById("nic");
+        nic.addEventListener('input',()=>
+        {
+            nic.setCustomValidity('');
+            nic.checkValidity();
+        });
+       
+   
+    nic.addEventListener('invalid',()=>{
+        if (nic.value ==''){
+            nic.setCustomValidity('Enter  NIC');
+        }
+        else{
+            nic.setCustomValidity('Enter NIC in123456789V or 200256789123 format')
+        }
+    });
+    
+    </script>
+
 </head>
 
 <body style="background-color: #F6F4F1 ;overflow-x:hidden ;overflow-y: auto;">
@@ -100,9 +121,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 <button class="form_btn">Submit</button>
             </div>
             <div class="form_right">
-                <form name="signUpForm" action="signup.php" onsubmit="return validateForm()" method="post">
+                <form name="signUpForm" action="signup.php" method="post">
                     <input type="text" name="fname" placeholder="Enter Name" required />
-                    <input type="text" name="nic" placeholder="Enter NIC" required />
+                    <input type="text" name="nic" placeholder="Enter NIC"  pattern = "[0-9]{9}[Vv0-9]{1,3}"required/>
+
+                    
                     <input type="text" name="mobileno" placeholder="Enter Mobile No" pattern="[0-9]{10}" required />
                     <input type="email" name="email" placeholder="abc@gmail.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
                     <input type=" text" name="address" placeholder="Enter District"required  />

@@ -3,9 +3,7 @@
 include_once("db.php");
 session_start();
 
-
-if (isset($_POST['but_submit'])) 
-{
+if (isset($_POST['but_submit'])) {
     $uname = $_POST['username'];
     $pswrd = $_POST['password'];
 
@@ -15,19 +13,12 @@ if (isset($_POST['but_submit']))
 
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['username'] = $uname;
-        $_SESSION['password'] = $pswrd;
         header("Location: vetDashboard.php");
         exit();
-    } else 
-    {
-
-       
-        header("Location: login.php");
-        exit();
-        echo$sql;
+    } else {
+        echo '<script> window.alert("Incorrect Username or password");</script>';
+        
     }
-
-
     mysqli_close($con);
 }
 
@@ -220,7 +211,7 @@ if (isset($_POST['but_submit']))
                             <div class="formin"><input class="input_box" type="text" name="username" required></div>
                         </div>
 
-                        <br><br>
+                        <br>
 
                         <div class="formcontent">
                             <div class="formlabel"> Password: </div>
