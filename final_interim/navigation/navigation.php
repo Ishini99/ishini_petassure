@@ -8,7 +8,7 @@
 
     <div class="nav" style="width: 100%;">
         <div class="left">
-            <img src="/Images/logo.png" width="100px" height="100px">
+            <img src="Images/logo.png" width="100px" height="100px">
             <p style="margin-left: 20px;">PetAssure</p>
         </div>
 

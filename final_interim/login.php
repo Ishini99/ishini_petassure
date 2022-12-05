@@ -16,7 +16,7 @@ if (isset($_POST['but_submit'])) {
 
     if (mysqli_num_rows($result) > 0) {
         $_SESSION['username'] = $uname;
-        header("Location: vetDashboard.php");
+        header("Location:vetDashboard/vetDashboard.php");
         exit();
     } else {
         echo '<script> window.alert("Incorrect Username or password.Try Again");</script>';
