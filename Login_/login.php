@@ -7,16 +7,16 @@ session_start();
 
 
 if (isset($_POST['but_submit'])) {
-    $uname = $_POST['username'];
-    $pswrd = $_POST['password'];
+    $username = $_POST['username'];
+    $pword = $_POST['pword'];
 
-    $sql = "SELECT `username`,`password` FROM `user_details`  WHERE username='$uname' AND password='$pswrd'";
+    $sql = "SELECT `username`,`pword` FROM `serviceprovider`  WHERE username='$username' AND pword='$pword'";
     $result = mysqli_query($con, $sql);
 
 
     if (mysqli_num_rows($result) > 0) {
-        $_SESSION['username'] = $uname;
-        header("Location: vetDashboard.php");
+        $_SESSION['username'] = $username;
+        header("Location:vetDashboard/vetDashboard.php");
         exit();
     } else {
         echo '<script> window.alert("Incorrect Username or password.Try Again");</script>';
@@ -36,16 +36,16 @@ if (isset($_POST['but_submit'])) {
 
     <title>Login</title>
    
-    <script type="text/javascript">
+  <!--  <script type="text/javascript">
             function validate() {
-                if (document.myForm.uname.value == "") {
+                if (document.myForm.username.value == "") {
                     alert("Please provide your UserName!");
-                    document.myForm.uname.focus();
+                    document.myForm.username.focus();
                     return false;
                 }
-                if (document.myForm.password.value == "") {
+                if (document.myForm.pword.value == "") {
                     alert("Please provide your password!");
-                    document.myForm.password.focus();
+                    document.myForm.pword.focus();
                     return false;
                 }
    
@@ -57,8 +57,8 @@ if (isset($_POST['but_submit'])) {
 var password = document.getElementById("password").value;
 if ( username == "ishini" && password == "1234"){
 alert ("Login successfully");
-        </script>
-    <style>
+        </script>-->
+    <style>/*
 .navigation-bar {
     width: 100%;  
     height: 80px; 
@@ -177,7 +177,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-style: none;
-}
+}*/
 
         </style>
        
@@ -208,7 +208,7 @@ body {
 
                         <div class="formcontent">
                             <div class="formlabel"> Password: </div>
-                            <div class="formin"><input class="input_box" type="password" name="password" required></div>
+                            <div class="formin"><input class="input_box" type="password" name="pword" required></div>
                         </div>
 
                         <br>
