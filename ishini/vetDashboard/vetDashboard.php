@@ -138,7 +138,7 @@ if ($result = mysqli_query($con, $sql))
             echo "<div class='info'><strong>Name:</strong> <span>" . $row['fname'] . "</span></div>";
             echo "<div class='info'><strong>Mobile:</strong> <span>" . $row['mobileno'] . "</span></div>";
             echo "<div class='info'><strong>Email:</strong> <span>" . $row['email'] . "</span></div>";
-            echo "<div class='info'><strong>Address:</strong> <span>" . $row['address'] . "</span></div>";
+            echo "<div class='info'><strong>Location:</strong> <span>" . $row['address'] . "</span></div>";
             echo "<div class='info'><strong>User Description:</strong> <span>" . $row['details'] . "</span></div>";
         }
         

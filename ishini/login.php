@@ -203,14 +203,15 @@ body {
 
                         <div class="formcontent">
                             <div class="formlabel"> Password: </div>
-                            <div class="formin"><input class="input_box" type="password" name="pword" required></div>
+                            <div class="formin">
+                                <input class="input_box" type="password" name="pword" required></div>
                         </div>
 
                         <br>
 
 
                         <div class="formcontent">
-                            <div class="formin">
+                        <div class="formin">
 
                                 <input class="button" type="submit" name="but_submit" id="but_submit" value="Sign In" />
 

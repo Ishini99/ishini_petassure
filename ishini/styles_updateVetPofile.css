@@ -112,6 +112,13 @@ padding: 17px 88px 10px 91px;
     background-color: #a6a6a6;
 
 }
+textarea {
+  border-radius: 0px;
+  border: white;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 50px 5px 5px;
+  background-color: #a6a6a6;
+}
 
 
 
