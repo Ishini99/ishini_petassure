@@ -6,7 +6,7 @@ $nic ="";
 if(isset($_SESSION["nic"]) ){
    $nic =$_SESSION["nic"];
 }else{
-
+   //header("location:login.php");
 }
 
 if(isset($_POST["submit"])){
@@ -57,9 +57,6 @@ if(isset($_POST["submit"])){
       }
     }
   }
-  $sql = "SELECT * FROM serviceprovidervet WHERE nic = '$nic'" ;
-
-  ($result = mysqli_query($con, $sql));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +80,11 @@ if(isset($_POST["submit"])){
             alert(updateText);
         }
         
-       
+        function addData() {
+            var adminText = "Your data has been saved Successfully.";
+            alert(adminText);
+        }
+
 
     </script>
     <style>
@@ -117,15 +118,14 @@ if(isset($_POST["submit"])){
         <div class="page">
             <?php include 'navigation/navigation.php';?>
             <div class="body">
-              <br><br>
-                <p class="userProfile">Update Profile</p>
+                <p class="userProfile">User Profile</p>
                 <div style="margin-bottom:10px ;">
                     
 
 
                 <center>
         
-        
+        <!--<a href="data.php">Data</a>-->
 
 
         <table class="styled-table" cellspacing=0 cellpadding=5>
@@ -155,7 +155,7 @@ if(isset($_POST["submit"])){
             <button class="form_btn2" type="submit" name="submit">Insert Image</button>
         </form>
         <br>
-      
+        <!-- <a href="../uploadimagefile">Upload Image File</a>-->
 
 
     </div>
@@ -166,51 +166,41 @@ if(isset($_POST["submit"])){
             </center>
             
 
-<!-- <form name="" action="updateVetProfile.php" method="post"> -->
+<form name="" action="updateVetProfile.php" method="post">
     <div style="width: 50%; margin-left: 350px; ">
 
-         <div class="form_left">
+        <div class="form_left">
             <P>NIC</P>
             <p>Fullname</p>
             <p>Mobile Number</p>
-            <p>Address</p>
+            <p>District</p>
             <p>Email</p>
-            <p>UserName</p>
-            <p>Password</p> 
+            <p>Password</p>
             <p>Description</p>
 
         </div>
-         
         
 
+        <div class="form_right">
+            <input type="text"value="<?php
+                                        echo $row['nic'];
+                                        ?>" />
+            <input type="text" name="fname" id="fname" />
+            <input type="text" name="mobileno" id="mobileno" />
+            <input type=" text" name="district" id="district" />
+            <input type="email" name="email" id="email" />
+            <input type="text" name="pword" id="pword" />
+            <textarea id="details" name="details" rows="5" cols="30"> </textarea>
 
- <?php
-        
-        while ($rows = $result->fetch_assoc()) {
-          ?>
-        <div class=form_right>
-            <input type="text"value="<?php echo $rows['nic']; ?>">
-            <input type="text" value="<?php echo $rows['fname']; ?>">
-            <input type="text" value="<?php echo $rows['mobileno']; ?>">
-            <input type=" text" value="<?php echo $rows['district']; ?>">
-            <input type="email" value="<?php echo $rows['email']; ?>">
-            <input type="text" value="<?php echo $rows['username']; ?>">
-           
-            <input type="password" value="<?php echo $rows['pword']; ?>"> 
-            <input type="text" value="<?php echo $rows['details']; ?>">
-             
-           <?php
-           }
-          ?>
-
+        </div>
 
     </div>
 
+</form>
 
 
 
 
-          </div>
 
 
 
@@ -219,11 +209,11 @@ if(isset($_POST["submit"])){
 
 <div style="height: 390px"></div>
 
-<center>
+
 <button class="form_btn" type="submit" onclick="adminRequest()">Request to delete</button>
 
 <button class="form_btn" type="button" onclick="updateProfile()" id="btnEnable">Update</button>
-          </center>
+<button class="form_btn" type="button" onclick="addData()" id="btnEnable">Add Details</button>
 <div class="footerr" style="position:absolute; z-index: -1; width: 99%;">
     <p> Telephone No: +94 11 233 5632
         Fax: +94 11 233 5632

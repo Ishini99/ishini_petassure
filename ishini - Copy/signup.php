@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 
-    $sql= "INSERT INTO serviceprovidervet (fname,nic, mobileno, stype ,email, address,username,pword,district,details) VALUES ('$fname' ,'$nic','$mobileno','$stype','$email','$address','$username','$pword','$district','$details')";
+    $sql= "INSERT INTO serviceprovider (fname,nic, mobileno, stype ,email, address,username,pword,district,details) VALUES ('$fname' ,'$nic','$mobileno','$stype','$email','$address','$username','$pword','$district','$details')";
 
     if (mysqli_query($con, $sql))
      {
@@ -104,11 +104,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 <input class="form_file" type="file" name="file" class="form-control">
                 
 
-<!-- <div>
+<div>
             
                     <p><b>**Password must contain:</b></p>
                     <p style="font-size: 12px;" >A <b>lowercase</b> letter ,a <b>capital (uppercase)</b> letter ,a  <b>number</b> and minimum <b>8 characters</b></p>
-                </div> -->
+                </div>
           
             <form action="signup.php" method="post">
         </div>
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             <div class="form_right">
                 <form name="signUpForm" action="signup.php" method="post">
                     <input type="text" name="fname" placeholder="Enter Name" required />
-                    <input type="text" name="nic" id="nic" placeholder="Enter NIC"  pattern = "[0-9]{9}[Vv0-9]{1,3}"required/>
+                    <input type="text" name="nic" placeholder="Enter NIC"  pattern = "[0-9]{9}[Vv0-9]{1,3}"required/>
 
                     
                     <input type="text" name="mobileno" placeholder="Enter Mobile No" pattern="[0-9]{10}" required />

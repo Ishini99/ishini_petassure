@@ -10,7 +10,7 @@ if (isset($_POST['but_submit'])) {
     $username = $_POST['username'];
     $pword = $_POST['pword'];
 
-    $sql = "SELECT * FROM `serviceprovidervet`  WHERE username='$username' AND pword='$pword'";
+    $sql = "SELECT * FROM `serviceprovider`  WHERE username='$username' AND pword='$pword'";
     $result = mysqli_query($con, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -224,10 +224,10 @@ body {
                         <br>
 
 
-                        <div class="formlabel">New User? <a class="createlink" href="signup.php"><strong?>Sign Up now</strong></a><br>
+                        <div class="formlabel">New User?<br> <a class="createlink" href="signup.php"><strong?>Sign Up as a service provider</strong></a><br>
 
 
-                               </div>
+                                <a class="createlink" href="signup.php"><strong?>Sign Up as a Client</strong></a></div>
 
                     </form>
 

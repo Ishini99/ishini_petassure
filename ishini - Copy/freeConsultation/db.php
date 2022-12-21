@@ -3,7 +3,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "petassure";
+$dbname = "pet";
 
 if (!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)) {
 

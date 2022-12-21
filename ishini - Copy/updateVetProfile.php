@@ -57,7 +57,7 @@ if(isset($_POST["submit"])){
       }
     }
   }
-  $sql = "SELECT * FROM serviceprovidervet WHERE nic = '$nic'" ;
+  $sql = "SELECT * FROM serviceprovider WHERE nic = '$nic'" ;
 
   ($result = mysqli_query($con, $sql));
 ?>
